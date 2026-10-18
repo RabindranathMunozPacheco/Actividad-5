@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter / Colab
+.ipynb_checkpoints/
+
+# Entornos y credenciales
+.venv/
+venv/
+.env
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store
