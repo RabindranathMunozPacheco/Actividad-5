@@ -5,6 +5,11 @@ __pycache__/
 # Jupyter / Colab
 .ipynb_checkpoints/
 
+# MLflow: base y artefactos locales (guardan rutas absolutas de esta PC);
+# la evidencia de los experimentos se exporta aparte
+mlflow.db
+mlruns/
+
 # Entornos y credenciales
 .venv/
 venv/
