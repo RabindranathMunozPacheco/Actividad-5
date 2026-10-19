@@ -1,0 +1,4 @@
+# Los CSV de datos van siempre con fin de línea LF: su sha256 identifica la versión del dataset
+# (etiqueta datos_sha256 en MLflow) y tiene que ser el mismo en Windows, Linux y Colab.
+*.csv text eol=lf
+*.parquet binary
