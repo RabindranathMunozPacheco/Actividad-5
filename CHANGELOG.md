@@ -2,6 +2,16 @@
 
 Reporte final de la actividad y registro de versiones del repositorio y del dataset.
 
+## [0.3.0] - 2026-10-18 · datos_ini
+
+### Agregado
+- `fuentes/obtener_datos.py`: manifiesto de las 7,012 imágenes del origen en un commit fijo, descarga a la caché de Hugging Face y verificación sha256.
+- `datos/datos_ini/manifiesto.csv`.
+- `requirements.txt`: dependencias de obtención y preparación de datos.
+
+### Corregido
+- La descarga con `snapshot_download(allow_patterns=...)` tardaba más de 15 minutos solo en filtrar 2,662 rutas exactas; ahora se pide archivo por archivo en paralelo (12 s, y casi instantáneo con la caché).
+
 ## [0.2.0] - 2026-10-18
 
 ### Agregado
