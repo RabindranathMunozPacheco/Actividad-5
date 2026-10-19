@@ -2,6 +2,23 @@
 
 Reporte final de la actividad y registro de versiones del repositorio y del dataset.
 
+## Reporte final
+
+- **Datos.** De 7,012 imágenes del origen quedan 1,078 fotos de parcela en 4 clases, después de 8 reglas documentadas. La versión de datos (`datos_sha256 = 13f23b88f9a05678`) se regenera idéntica byte por byte.
+- **Hallazgos en los datos.** 870 fotos de parcela estaban copiadas en varias carpetas (hojas con varias enfermedades), lo que también afectó la evaluación de la Actividad 4. Además, la sesión de captura está fuertemente asociada a la clase.
+- **Modelos.** Regresión logística (C = 0.1): F1 macro de 0.665 en validación cruzada y 0.721 en prueba. Random forest (`min_samples_leaf` = 10): 0.632 y 0.660.
+- **Comparación.** La diferencia de +0.023 no es significativa con la t corregida de Nadeau y Bengio (p = 0.28; Wilcoxon sin corregir daría p = 0.005). Se elige la regresión logística por ser 44 veces más ligera.
+- **Riesgo principal.** Con la sesión de captura fuera, los dos modelos bajan a F1 0.43 y la roya a 0.04: aprenden las condiciones de captura. El modelo queda registrado como `candidato`, no listo para producción.
+- **Siguiente paso.** Una campaña de captura y etiquetado multietiqueta con la asociación. Las acciones MLOps están en el README, sección 7.
+
+## [0.5.0] - 2026-10-18 · resultados
+
+### Agregado
+- Corridas definitivas en MLflow ejecutadas desde el commit de v0.4.0 sin cambios pendientes en código ni datos: experimentos `validacion-mlflow`, `maiz-datos` y `maiz-logreg-vs-rf`, y modelo `clasificador-hoja-maiz@candidato`.
+- `evidencias/`: figuras de datos y de resultados, y `corridas_mlflow.csv` con todas las corridas del experimento de entrenamiento.
+- `fuentes/entrena.ipynb` ejecutado: visualizaciones de datos y análisis de resultados leídos de MLflow; corre local o en Colab.
+- README: visualizaciones y hallazgos, resultados, deuda técnica y acciones MLOps.
+
 ## [0.4.0] - 2026-10-18 · datos_limp
 
 ### Agregado
